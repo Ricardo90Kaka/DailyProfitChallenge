@@ -134,11 +134,14 @@ select {
   gap: 6px;
   color: var(--text-300);
   font-size: 13px;
+  min-width: 0;
 }
 
 input,
 select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background: rgba(11, 20, 34, 0.9);
   border: 1px solid rgba(152, 178, 211, 0.25);
   color: var(--text-100);
@@ -146,6 +149,12 @@ select {
   height: 44px;
   padding: 0 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="date"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 input:focus,
@@ -738,5 +747,36 @@ select:focus {
   .chart-card,
   .heatmap-card {
     border-radius: 16px;
+  }
+
+  .entry-form label,
+  .setup-grid label {
+    width: 100%;
+    min-width: 0;
+  }
+
+  input[type="date"] {
+    font-size: 15px;
+    padding-right: 8px;
+  }
+
+  .heatmap-grid {
+    gap: 5px;
+  }
+
+  .day-cell {
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .day-number {
+    top: 4px;
+    left: 5px;
+    font-size: 9px;
+  }
+
+  .day-value {
+    font-size: 9px;
+    line-height: 1.1;
   }
 }
