@@ -152,9 +152,26 @@ select {
 }
 
 input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  margin: 0;
+  padding: 0;
+  opacity: 0.9;
 }
 
 input:focus,
@@ -757,7 +774,9 @@ select:focus {
 
   input[type="date"] {
     font-size: 15px;
-    padding-right: 8px;
+    height: 44px;
+    padding-left: 12px;
+    padding-right: 10px;
   }
 
   .heatmap-grid {
