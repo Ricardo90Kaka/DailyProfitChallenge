@@ -27,23 +27,24 @@
   --surface-topbar: rgba(9, 15, 26, 0.82);
   --surface-input: rgba(11, 20, 34, 0.9);
   --surface-soft: rgba(10, 19, 33, 0.65);
-  --sidebar-bg-a: rgba(28, 20, 10, 0.92);
-  --sidebar-bg-b: rgba(12, 10, 8, 0.9);
-  --sidebar-border: rgba(231, 188, 81, 0.28);
-  --sidebar-brand-border: rgba(238, 198, 104, 0.36);
-  --sidebar-brand-bg-a: rgba(212, 153, 43, 0.3);
-  --sidebar-brand-bg-b: rgba(109, 74, 18, 0.38);
-  --nav-core-a: rgba(8, 8, 9, 0.96);
-  --nav-core-b: rgba(2, 2, 2, 0.98);
-  --nav-border-a: rgba(255, 228, 148, 0.94);
-  --nav-border-b: rgba(195, 135, 40, 0.95);
-  --nav-shadow-inset: rgba(255, 214, 115, 0.2);
-  --nav-shadow-drop: rgba(16, 11, 4, 0.5);
-  --nav-shimmer-low: rgba(255, 229, 143, 0.24);
-  --nav-shimmer-mid: rgba(255, 208, 90, 0.5);
-  --nav-active-inset: rgba(255, 226, 134, 0.55);
-  --nav-active-outline: rgba(241, 191, 76, 0.42);
-  --nav-active-drop: rgba(134, 93, 30, 0.42);
+  --sidebar-bg-a: rgba(13, 22, 37, 0.84);
+  --sidebar-bg-b: rgba(9, 15, 26, 0.74);
+  --sidebar-border: rgba(151, 177, 211, 0.22);
+  --sidebar-brand-border: rgba(96, 165, 250, 0.24);
+  --sidebar-brand-bg-a: rgba(96, 165, 250, 0.2);
+  --sidebar-brand-bg-b: rgba(0, 196, 140, 0.12);
+  --nav-surface-a: rgba(18, 30, 48, 0.78);
+  --nav-surface-b: rgba(10, 18, 32, 0.82);
+  --nav-border: rgba(151, 177, 211, 0.22);
+  --nav-border-hover: rgba(96, 165, 250, 0.46);
+  --nav-text: var(--text-300);
+  --nav-text-active: #eef6ff;
+  --nav-shadow-inset: rgba(255, 255, 255, 0.02);
+  --nav-shadow-drop: rgba(3, 9, 20, 0.34);
+  --nav-active-a: rgba(10, 167, 128, 0.9);
+  --nav-active-b: rgba(35, 120, 242, 0.92);
+  --nav-active-outline: rgba(96, 165, 250, 0.38);
+  --nav-active-drop: rgba(35, 120, 242, 0.22);
   --focus-ring: rgba(96, 165, 250, 0.18);
   --theme-toggle-bg: rgba(17, 26, 41, 0.7);
   --theme-toggle-border: rgba(151, 177, 211, 0.3);
@@ -71,19 +72,24 @@
   --surface-topbar: rgba(247, 251, 255, 0.92);
   --surface-input: rgba(255, 255, 255, 0.94);
   --surface-soft: rgba(245, 250, 255, 0.95);
-  --sidebar-bg-a: rgba(249, 251, 255, 0.96);
-  --sidebar-bg-b: rgba(243, 247, 255, 0.96);
-  --sidebar-border: rgba(212, 166, 74, 0.36);
-  --sidebar-brand-border: rgba(226, 179, 73, 0.48);
-  --sidebar-brand-bg-a: rgba(252, 231, 170, 0.78);
-  --sidebar-brand-bg-b: rgba(250, 215, 133, 0.62);
-  --nav-core-a: rgba(18, 18, 20, 0.98);
-  --nav-core-b: rgba(8, 8, 10, 0.99);
-  --nav-shadow-inset: rgba(255, 216, 126, 0.24);
-  --nav-shadow-drop: rgba(98, 72, 28, 0.35);
-  --nav-shimmer-low: rgba(255, 230, 152, 0.3);
-  --nav-shimmer-mid: rgba(255, 205, 87, 0.58);
-  --nav-active-drop: rgba(124, 85, 26, 0.38);
+  --sidebar-bg-a: rgba(247, 251, 255, 0.92);
+  --sidebar-bg-b: rgba(240, 246, 255, 0.9);
+  --sidebar-border: rgba(99, 124, 159, 0.22);
+  --sidebar-brand-border: rgba(37, 99, 235, 0.2);
+  --sidebar-brand-bg-a: rgba(191, 219, 254, 0.76);
+  --sidebar-brand-bg-b: rgba(167, 243, 208, 0.5);
+  --nav-surface-a: rgba(255, 255, 255, 0.96);
+  --nav-surface-b: rgba(242, 247, 255, 0.94);
+  --nav-border: rgba(123, 151, 189, 0.26);
+  --nav-border-hover: rgba(37, 99, 235, 0.34);
+  --nav-text: var(--text-300);
+  --nav-text-active: #ffffff;
+  --nav-shadow-inset: rgba(255, 255, 255, 0.5);
+  --nav-shadow-drop: rgba(31, 56, 96, 0.12);
+  --nav-active-a: rgba(10, 167, 128, 0.9);
+  --nav-active-b: rgba(37, 99, 235, 0.92);
+  --nav-active-outline: rgba(37, 99, 235, 0.22);
+  --nav-active-drop: rgba(37, 99, 235, 0.16);
   --focus-ring: rgba(37, 99, 235, 0.18);
   --theme-toggle-bg: rgba(255, 255, 255, 0.92);
   --theme-toggle-border: rgba(123, 151, 189, 0.36);
@@ -123,6 +129,7 @@ body {
   height: 100vh;
   border-right: 1px solid var(--sidebar-border);
   background: linear-gradient(180deg, var(--sidebar-bg-a), var(--sidebar-bg-b));
+  backdrop-filter: blur(16px);
   padding: 14px 10px;
   display: flex;
   flex-direction: column;
@@ -137,9 +144,10 @@ body {
   place-items: center;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--gold-100);
+  color: var(--text-100);
   border: 1px solid var(--sidebar-brand-border);
   background: linear-gradient(140deg, var(--sidebar-brand-bg-a), var(--sidebar-brand-bg-b));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .app-nav-links {
@@ -164,25 +172,23 @@ body {
   gap: 8px;
   cursor: pointer;
   font-size: 12px;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
 .theme-toggle-btn:hover {
-  border-color: rgba(212, 168, 64, 0.58);
+  border-color: var(--nav-border-hover);
+  background: linear-gradient(180deg, var(--nav-surface-a), var(--nav-surface-b));
   color: var(--text-100);
   transform: translateY(-1px);
 }
 
 .nav-liquid-btn {
-  position: relative;
-  overflow: hidden;
   border-radius: 14px;
   min-height: 84px;
-  border: 1px solid transparent;
-  background:
-    linear-gradient(170deg, var(--nav-core-a), var(--nav-core-b)) padding-box,
-    linear-gradient(135deg, var(--nav-border-a), var(--nav-border-b)) border-box;
-  color: var(--gold-100);
+  border: 1px solid var(--nav-border);
+  background: linear-gradient(170deg, var(--nav-surface-a), var(--nav-surface-b));
+  color: var(--nav-text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -192,39 +198,26 @@ body {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  box-shadow: inset 0 0 0 1px var(--nav-shadow-inset), 0 10px 18px var(--nav-shadow-drop);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-.nav-liquid-btn::before {
-  content: "";
-  position: absolute;
-  inset: -70%;
-  background: linear-gradient(
-    120deg,
-    transparent 20%,
-    var(--nav-shimmer-low) 46%,
-    var(--nav-shimmer-mid) 50%,
-    var(--nav-shimmer-low) 54%,
-    transparent 80%
-  );
-  transform: translateX(-70%) rotate(8deg);
-  transition: transform 0.6s ease;
-}
-
-.nav-liquid-btn:hover::before,
-.nav-liquid-btn.active::before {
-  transform: translateX(70%) rotate(8deg);
+  box-shadow: inset 0 1px 0 var(--nav-shadow-inset), 0 10px 18px var(--nav-shadow-drop);
+  backdrop-filter: blur(14px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .nav-liquid-btn:hover,
 .nav-liquid-btn.active {
   transform: translateY(-1px);
-  filter: brightness(1.04);
+  border-color: var(--nav-border-hover);
+  color: var(--text-100);
   box-shadow:
-    inset 0 0 0 1px var(--nav-active-inset),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 0 0 1px var(--nav-active-outline),
     0 12px 26px var(--nav-active-drop);
+}
+
+.nav-liquid-btn.active {
+  color: var(--nav-text-active);
+  border-color: rgba(132, 207, 254, 0.42);
+  background: linear-gradient(135deg, var(--nav-active-a), var(--nav-active-b));
 }
 
 .nav-liquid-btn span,
@@ -1436,8 +1429,7 @@ select:focus {
   }
 
   .app-sidebar {
-    position: sticky;
-    top: 0;
+    position: static;
     height: auto;
     padding: 8px 10px;
     border-right: 0;
